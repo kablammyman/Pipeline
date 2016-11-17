@@ -19,23 +19,13 @@
 #include "ConsoleOutput.h"
 #include "LogfileOutput.h"
 
-#include "PipelineFile.h"
-#include "PipelineItem.h"
 
+#include "PipelineManager.h"
 
 int main(int argc, char *argv[])
 {
-	//vector<PipelineNode *> pipelines;
-	PipelineFile file;
-	file.ParseFile("D:\\source\\test.txt");
-	file.DisplayPipeline();
+	PipelineManager manager("D:\\source\\pipelinecfg.txt");
 
-	PipelineItem item("some owner",&file);
-	item.SetPipelineStage(1);
-	item.AddStageNotes(2, "he wants to sell");
-	item.AddStageNotes(1,"what will this do?\n");
-	item.GetCurrentStageInfo();
-	item.WriteItemToFile("D:\\source\\");
 
 	return 0;
 }

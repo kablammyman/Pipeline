@@ -16,6 +16,8 @@ class PipelineFile
 	PipelineNode * pipelineHead;
 public:
 	PipelineFile();
+	PipelineFile(string filename);
+
 	bool ParseFile(string filename);
 	void DisplayPipeline();
 	PipelineNode * GetStageNode(int stage);

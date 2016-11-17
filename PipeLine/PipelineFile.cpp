@@ -7,8 +7,14 @@ PipelineFile::PipelineFile()
 {
 	pipelineName = "";
 }
+PipelineFile::PipelineFile(string filename)
+{
+	pipelineName = "";
+	ParseFile(filename);
+}
 bool PipelineFile::ParseFile(string filename)
 {
+
 	fstream fs;
 	fs.open(filename);
 	if (!fs.is_open())
@@ -17,7 +23,7 @@ bool PipelineFile::ParseFile(string filename)
 
 	PipelineNode *curNode = NULL;
 	PipelineNode *prevNode = NULL;
-	std::string::size_type sz;   // alias of size_t
+
 	int stage = 1;
 	int lineNum = 0;
 
